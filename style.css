@@ -1,0 +1,366 @@
+:root {
+    --primario: rgb(247,133,26);
+    --primarioOscuro:rgb(186, 101, 21);
+    --secundario: rgb(241, 237, 4);
+    --secundarioOscuro:rgb(182, 179, 4);
+    --blanco: #fff;
+    --negro: #000;
+    --fuentePrincipal :'Besley'
+}
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+/**Globales **/
+body {
+    background-color: var(--primario);
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+p{
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+}
+a {
+    text-decoration: none;
+}
+img {
+    width: 250px;
+    height: 250px;
+}
+.conteneror {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+h1, h2, h3 {
+    text-align: center;
+    color: var(--secundario);
+    font-family: var(--fuentePrincipal);
+}
+h1 {
+    font-size: 4rem;
+}
+h2 {
+    font-size: 3.2rem;
+}
+h3 {
+    font-size: 2.4rem;
+}
+.header {
+    display: flex;
+    justify-content: center;
+}
+.header__logo {
+    margin: 1.5rem 0;
+    width: 250px;
+    height: 250px;
+}
+.navegacion {
+    background-color: var(--primarioOscuro);
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    /**gap: 2rem; separación nueva **/
+}
+.navegacion__enlace {
+    font-family: var(--fuentePrincipal);
+    color: var(--negro);
+    font-size: 3.2rem;
+    margin-right: 2rem;
+}
+.navegacion__enlace:last-of-type {
+    margin-right: 0;
+}
+.navegacion__enlace--activo,
+.navegacion__enlace:hover {
+    color: var(--blanco);
+}
+.footer {
+    background-color: var(--primarioOscuro);
+    padding: 0.3rem 0;
+    margin-top: 2rem;
+}
+.footer__texto {
+    text-align: center;
+    font-family: var(--fuentePrincipal);
+    font-size: 2.2rem;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 2rem;
+}
+
+.producto {
+    background-color: var(--primarioOscuro);
+    padding: 1rem;
+}
+.producto__imagen {
+    width: 100%;
+
+}
+.producto__informacion {
+
+}
+.producto__nombre {
+    font-size: 5rem;
+}
+.producto__precio {
+    font-size: 2.8rem;
+    color: var(--secundario);
+}
+.producto__nombre,
+.producto__precio {
+    font-family: var(--fuentePrincipal);
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.grafico {
+    min-height: 30rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-column: 1 / 3;
+}
+.grafico--camisas {
+    grid-row: 1 / 3;
+    background-image: url(img/grafico1.jpg);
+}
+.grafico--node {
+    background-image: url(img/grafico2.jpg);
+    grid-row: 8 / 9;
+    background-position: center;  
+}
+.nosotros {
+    display: grid;
+    grid-template-rows:repeat(2, auto) ;
+    /**Arreglar este margen para las distintas cosas**/
+    margin: 0 50rem;
+}
+.nosotros__contenido {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+.nosotros__imagen {
+    grid-column: 1 / 2;
+    width: 100%;
+    height: 400px;
+}
+.bloques {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 0 50rem;
+}
+.bloque {
+    text-align: center;
+}
+.bloque__titulo {
+    margin: 0;
+}
+.bloque__img {
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**Dispositivos**/
+/** Galaxy Fold (280x653) **/
+@media (min-width: 280px) {
+      .grid {
+          grid-template-columns:repeat(1,1fr);
+        }
+        .producto__imagen {
+            width: 220px;
+            height: 250px;
+        }
+        .producto__nombre {
+            font-size: 2.2rem;
+        }
+        .grafico {
+            grid-column: 1 / 2;
+            width: 240px;
+            height: 290px;
+        }
+        .grafico--camisas {
+            grid-row: 3 / 4;
+        }
+        .grafico--node {
+            grid-row: 9 / 10;   
+        }
+        
+}
+/**Moto G4 (360x640) **/
+@media (min-width: 360px) {
+        .producto__imagen {
+            width: 300px;
+            height: 350px;
+        } 
+        .producto__nombre {
+            font-size: 2.9rem;
+        }
+        .grafico {
+            width: 320px;
+            height: 470px;
+            }    
+}
+/**Iphone X (375x812) **/
+@media (min-width: 375px) {
+          .producto__imagen {
+              width: 310px;
+              height: 360px;
+          }
+          .grafico {
+            width: 330px;
+            height: 550px;
+            }   
+}
+/**Pixel 2 (411x731) **/
+@media (min-width: 411px) {
+        .producto__imagen {
+            width: 350px;
+        }
+        .grafico {
+            width: 370px;
+            height: 550px;
+            }             
+}
+/**Surface Duo (540x720)**/
+@media (min-width: 540px) {
+        .producto__imagen {
+            width: 480px;
+            height: 550px;
+        }
+        .grafico {
+        width: 500px;
+        height: 650px;
+        }
+        .navegacion__enlace {
+            font-size: 4rem;
+        }          
+}
+/**Ipad (768x1024) **/
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns:repeat(2, 1fr);
+        margin: 3%;
+    }
+    .producto {
+        width: 340px;
+        height: 590px;
+    }
+    .producto__imagen {
+        width: 320px;
+        height: 450px;
+    }
+    .producto__nombre {
+        font-size: 3.5rem;
+    }
+    .grafico {
+        width: 710px;
+        grid-column:  1 / 3;
+    }
+    .grafico--camisas {
+        grid-row: 2 / 3;
+    }
+    .grafico--node {
+        grid-row: 6 / 7;
+    }
+    .nosotros {
+        display:grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+    .nosotros__contenido {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    .nosotros__imagen {
+        grid-column: 2 / 2;
+    }
+    .bloques {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+/**Generic Laptop**/
+@media (min-width: 1280px) {
+        .grid {
+            grid-template-columns: repeat(3, 1fr);
+            margin-left: 5%;
+            margin-right: 2%;
+        }
+        .producto {
+            width: 370px;
+        }
+        .producto__imagen {
+            width: 350px;
+        }
+        .grafico {
+            width: 770px;
+            height: 590px;
+        }
+        .grafico--camisas {
+            grid-row: 2 / 3;
+            grid-column: 1 / 3;
+        }
+        .grafico--node {
+            grid-row: 4 / 5;
+            grid-column: 2 / 4;
+        }
+}
+/**Monitor 1080p (buscar resolucion)**/
+@media (min-width: 1800px) {
+        .producto {
+            width: 570px;
+            height: 750px;
+        }
+        .grid {
+            margin-left: 4rem;
+        }
+        .producto__imagen {
+            width: 550px;
+            height: 610px;
+        }
+        .grafico {
+            width: 1170px;
+            height: 750px;
+        }
+}
+@media (min-width: 2400px) {
+        .grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .grafico {
+            width: 1180px;
+        }
+}
